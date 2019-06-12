@@ -3,5 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "fantom <esterio@fex.net>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "exec-sh": "^0.3.2",
+    "node-cron": "^2.0.3"
+  }
 }
