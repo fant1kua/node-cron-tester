@@ -20,16 +20,18 @@ const valid = validate(tasks);
 
 if (!valid) {
     console.error('Invalid tasks: ' + ajv.errorsText(validate.errors));
+    process.exit(1);
 } else {
-    tasks.forEach((task, index) => {
-        cron.schedule(task[0], () => {
-            execSh(task[1], {}, (err) => {
+    tasks.forEach(([expression, command], index) => {
+        cron.schedule(expression, () => {
+            execSh(command, {}, (err) => {
                 if (err) {
                     console.error(`Task ${index} exit code: ${err.code}`);
+                } else {
+                    console.info(`Task ${index} completed`);
                 }
             });
         });
     })
-
 }
 
