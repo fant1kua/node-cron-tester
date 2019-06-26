@@ -6,7 +6,7 @@
 
 ## Install
 ```
-git clone https://git.g-nation.ru/fantom/cron-tester.git
+git clone git@github.com:fant1kua/node-cron-tester.git
 cd cron-tester
 yarn install
 
@@ -20,7 +20,7 @@ cp tasks.json.example tasks.json
 `tasks.json`
 ```
 [
-  ["* * * * *", "echo hello exec-sh && bash"]
+  ["* * * * *", "echo hello"]
 ]
 ```
 

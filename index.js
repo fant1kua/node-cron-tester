@@ -25,7 +25,7 @@ if (!valid) {
         cron.schedule(task[0], () => {
             execSh(task[1], {}, (err) => {
                 if (err) {
-                    console.log(`Task ${index} exit code: ${err.code}`);
+                    console.error(`Task ${index} exit code: ${err.code}`);
                 }
             });
         });
